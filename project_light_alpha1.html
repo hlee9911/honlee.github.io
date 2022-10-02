@@ -52,48 +52,210 @@
             <section class="post">
                 <header class="major">
                     <h1>Pre-Alpha 1 Sprint</h1>
+                    <h3>Sept 18th, 2022 to Oct 2nd, 2022 - Documentation & Feature Implmentation</h3>
                 </header>
-                <p style="text-align: center;">Will be updated soon!</p>
+                <body class="major">
+                    <p style="text-align:center;"><img src="images/o2yL8R.png" alt="pic of Project Light cover art" width="750"> <br/></p>
+                    <div>
+                        <h3>Introduction</h3>
+                        <p>Hello! Welcome to my first Project Light Dev Blog. In this dev blog,
+                            I will be posting updates on my involvement bi-weekly in WolverineSoft Studio Fall 2022:
+                            Project Light as a programmer in a ship & system squad. <br/> <br/>
+                        Even though Project Light has been developed since the summer of 2022 and I have been part of the
+                        summer studio, please note that I will be focusing on posting my involvement for fall 2022.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Project Overview</h3>
+                        <p>Project Light is an underwater-themed strategy game
+                           inspired by FTL: Faster Than Light in terms of game mechanics. The prototype version
+                        is released on the itch.io page developed by 19 members over the summer of 2022. In the fall semester, I'm working
+                        as a programmer along with a team of 30+ members.</p>
+                    </div>
+                    <div>
+                        <h3>Programming and Development (14 hours)</h3>
+                        <p>
+                            As a programmer, I spent the majority of my work time on programming and implementing new features into our game.
+                        </p>
+                        <p>
+                            My main task for this sprint was to implement the walls, ladders, floors, and doors with
+                            our new side-view perspective rather than a top-view perspective. These features are important 
+                            as they provide various
+                            interactions and buffs to crews in the player ship. These additional features would help the player to strategize
+                            their tactics even more during the gameplay such as preventing hazards from spreading to other rooms by closing doors.
+                        </p>
+                        <p>
+                            Details of new objects to be implemented I mentioned above are as follows:
+                           <ul>
+                                <li><u>Walls</u>: protect crews in the room from hazards and enemy attacks.
+                                    No interaction with crews. Can be upgraded to provide increased protection. </li>
+                                <li><u>Floors</u>: Pathways between each rooms. Can be upgraded to provide a movement speed
+                                    bonus to crews on the ship. </li>
+                                <li><u>Doors</u>: connect ship rooms horizontally. Can be opened or closed through crew and player interaction.
+                                    Can be used strategically to prevent hazards from spreading to other rooms. </li>
+                                <li><u>Ladders</u>: connect rooms vertically. Can be upgraded to provide crew movement speed boosts
+                                    when the crew's collider is on the ladder's collider. </li>
+                           </ul>
+                        </p>
+                        <h4>
+                            Doors
+                        </h4>
+                        <p>
+                            Doors are the first feature I implemented as it is the only object out of four that requires interaction with crews and
+                            the player. I created a new prefab called Door and attached a new component called ShipDoorManager.cs to ensure everything
+                            is working correctly for the crew and the player's interaction with the door. For example, the door should remain closed all the time
+                            but when the crew and door collide with each other, the door should open and close once the crew moves to the next room. And when
+                            a player clicks the opened door, the door should be closed and vice versa. Below are code snippets from ShipDoorManager.cs.
+                        </p>
+                        <pre>
+                            <code class="language-csharp">
+/// collision detection with enemy and crew members in the ship
+void OnTriggerEnter2D(Collider2D collision)
+{
+    if (collision.CompareTag("Crew") && gameObject.transform.parent.CompareTag("PlayerShip") ||
+        collision.CompareTag("Enemy") && gameObject.transform.parent.CompareTag("EnemyShip"))
+    {
+        if (!isDoorOpened)
+        {
+            StartCoroutine(OpenAndCloseDoor());
+        }
+    }
+}
+                                    
+// open and close the door when crew is passing by
+IEnumerator OpenAndCloseDoor()
+{
+    OpenDoor();
+    yield return new WaitForSeconds(doorCloseDelay);
+    CloseDoor();
+}
+                                
+// Handles the door when a player clicks on the door
+public void OnPointerClick(PointerEventData data)
+{
+    playerController.ClickDoor(gameObject, data.button == PointerEventData.InputButton.Left);
+}
+                            </code>
+                         </pre>
+                         <p>
+                            And here's the short gameplay of the door's interaction in the current game.
+                         </p>
+                         <p style="text-align:center;"><img src="images/doors.gif" alt="gif of doors interaction" width="750" width="500"></p>
+                         <p>
+                            As you can see, selecting a crew does not always work. Thus, we need to keep an eye on that for the future debugging period.
+                            In addition, a new document regarding crew navigation has been created by the designer recently and there are a few adjustments that I need
+                            to change to doors. For instance, the player interaction with the door should be changed to crew standing on the door and pressing
+                            "D" key to open or close the door rather than through mouse buttons.
+                         </p>
+
+                         <h4>
+                            Walls, Ladders, and Floors
+                         </h4>
+                         <p>
+                            There isn't that much to show for walls, ladders, and floors at the moment since they are not interactive as doors
+                            and the crew navigation feature has not been finalized to factor in my implementation yet. Therefore, I have created prefabs
+                            for each of these objects and attached a script that manages using these objects such as required variables and a public
+                            method for upgrading levels. Below is the screenshot of the prefabs.
+                         </p>
+                         <p style="text-align:center;"><img src="devblog/prefabs.png" alt="pic of walls, ladders, and floor prefab" width="750" width="500"></p>
+                         <p>
+                            And below is the code snippet of Wall manager class (ladders and floors have similar code bases).
+                         </p>
+                         <pre>
+                            <code class="language-csharp">
+public class ShipWallManager : MonoBehaviour
+{
+    [Header("Wall related field")]
+    [SerializeField] private int maxUpgradeLevel = 3;
+    [SerializeField] private int currentUpgradeLevel = 1;
+    [SerializeField, Tooltip("Current protection resistance multiplier \n" +
+        "reduction: 0.1f == 10% damage reduction")] 
+    private float currentProcResMult = 0.1f;
+    [SerializeField, Tooltip("Hazard automatic fix chance"), Range(0f, 1f)]
+    private float hazardResolveChance = 0f;
+    [SerializeField, Tooltip("A references to rooms on this floor object")]
+    private GameObject connectedRoom;
+                                
+    // getter methods
+    public int CurrentUpgradeLevel { get { return currentUpgradeLevel; } }
+    public GameObject ConnectedRoom { get { return connectedRoom; } }
+                                
+    // use this for crew's movement speed when crew interacts with the ladder
+    public float CurrentProcResMult { get { return currentProcResMult; } }
+    public float HazardResolveChance { get { return hazardResolveChance; } }
+                                
+    // Upgrade the level of currentUpgradeLevel
+    public void UpgradeLevel()
+    {
+        currentUpgradeLevel = Mathf.Clamp(currentUpgradeLevel + 1, 0, maxUpgradeLevel);
+        if (currentUpgradeLevel == 2)
+        {
+            currentProcResMult *= 2f; // double the original
+            hazardResolveChance = 0.05f; // 5% chance
+        }
+        else if (currentUpgradeLevel == 3)
+        {
+            currentProcResMult *= 1.5f; // triple the original
+            hazardResolveChance = 0.15f; // 15% chance
+        }
+    }
+}
+                            </code>
+                         </pre>
+                    </div>
+                    <div>
+                        <h3>Documentation (3 hours)</h3>
+                        <p>I spent a decent amount of work for this sprint on creating a how-to build a new ship system for new developers.
+                           Since I worked on creating a foundation for building a ship system over the summer and newly joined
+                           developers might not be familiar with the architecture, I decided to volunteer on creating a document so that
+                           new developers can comprehend and follow along easily when they are assigned to build a new ship system.
+                        </p>
+                        <p style="text-align:center;"><img src="images/confluencedoc.png" alt="pic of Project Light doc" width="750"></p>
+                        <p style="text-align:center;"><img src="images/systemdoc.png" alt="pic of Project Light doc" width="750"></p>
+                        <p>
+                        As you can see, I've attached a diagram of scriptable objects to explain how the current ship system is structured. Then
+                        I attached screenshots of important scripts when building a new ship system under the
+                        step by step section.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Meetings (4 hours)</h3>
+                        <p>For four of my 24 hours of bi-weekly involvement, I spent my time in the studio meeting including
+                            squad and department meetings. <br/> <br/>
+                            Throughout the meeting, we went to each member's accomplishments for a particular week and planned out
+                            the task for the next week.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Discussion and Communication (1 hour)</h3>
+                        <p>
+                            As a programmer, it is crucial to communicate with designers closely especially
+                            in the early stage of development to check if a certain part of tasks
+                            is implemented into the game as expected. This is to ensure that we do not face weird bugs in a later stage
+                            of development. By utilizing discord ship and system channel chat, I communicated closely with Andrew Schafer,
+                            one of the designers for the ship and system squad regarding the designs of walls, ladders, floors, and doors for new side-view
+                            perspective.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Playtesting (2 hours)</h3>
+                        <p>I spent two of 24 hours of work over the last two weeks playtesting our prototype version.
+                            Not only that playtesting our prototype one of our assignments, but I also wanted to get familiar with
+                            what we have developed over the summer to check the current status of the build.
+                            <br/> <br/>
+                            I playtested carefully to spot possible bugs in case we need to fix them before we release our game
+                            in the future. Thankfully, I did not spot any major issues throughout the playtesting session except
+                            for when selecting crews in the player ship doesn't work sometimes. Since crews play a significant role
+                            in our game, we should investigate these occasional selecting errors during the debugging period.
+                        </p>
+                    </div>
+                </body>
             </section>
         </div>
 
         <!-- Footer -->
         <footer id="footer">
-            <!--
-			<section>
-				<form method="post" action="#">
-					<div class="fields">
-						<div class="field">
-							<label for="name">Name</label>
-							<input type="text" name="name" id="name" />
-						</div>
-						<div class="field">
-							<label for="email">Email</label>
-							<input type="text" name="email" id="email" />
-						</div>
-						<div class="field">
-							<label for="message">Message</label>
-							<textarea name="message" id="message" rows="3"></textarea>
-						</div>
-					</div>
-					<ul class="actions">
-						<li><input type="submit" value="Send Message" /></li>
-					</ul>
-				</form>
-			</section>
-			-->
             <section class="split contact">
-                <!--
-				<section class="alt">
-					<h3>Address</h3>
-					<p>1234 Somewhere Road #87257<br />
-						Nashville, TN 00000-0000</p>
-				</section>
-				<section>
-					<h3>Phone</h3>
-					<p><a href="#">(000) 000-0000</a></p>
-				</section>
-				-->
                 <section>
                     <h3>Email</h3>
                     <p><a href="mailto:hlee0211@gmail.com">hlee0211@gmail.com</a></p>
@@ -107,16 +269,6 @@
                         <li><a href="https://github.com/hlee9911" target="_blank"
                                 class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
                     </ul>
-                    <!--
-						<ul class="icons alt">
-							<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a>
-							</li>
-							<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a>
-							</li>
-							<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-							</ul>
-							-->
                 </section>
             </section>
         </footer>
