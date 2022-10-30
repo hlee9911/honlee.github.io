@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Hon Lee - Project Light: Beta 1</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" href="/images/city.jpg" type="image/x-icon">
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo">Project Light: Pre-Beta 1 Sprint</a>
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="index.html">Projects</a></li>
+                <li><a href="aboutme.html">About Me</a></li>
+                <li><a href="https://drive.google.com/file/d/1wNzerjUPJfGMa-IlzcF_glGGhJd6Kd8p/view?usp=sharing"
+                        target="_blank">Resume</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/hon-lee-542b43191/" target="_blank"
+                        class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                <li><a href="https://github.com/hlee9911" target="_blank" class="icon brands alt fa-github"><span
+                            class="label">GitHub</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Post -->
+            <section class="post">
+                <header class="major">
+                    <h1>Pre-Beta 1 Sprint</h1>
+                    <h3>Oct 17th, 2022 to Oct 30th, 2022 - New Hazard implementation and Bugs Fix</h3>
+                </header>
+                <body class="major">
+                    <p style="text-align:center;"><img src="images/o2yL8R.png" alt="pic of Project Light cover art" width="750"> <br/></p>
+                    <div>
+                        <p>
+                            For the past two weeks, my primary tasks were to implement a new hazard system which is Flooding, and tackle 
+                            major bugs as many as possible since this week (week of 10/24) was the stability check week. In general, this sprint
+                            went great as I have fixed various bugs related to the ship and system and the game finally is slowly getting close
+                            to what FTL looks like.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Programming and Bug fixing (17 hours)</h3>
+                        <p>
+                            For this sprint, I spent the majority of my work time on programming and bug fixing. The major programming tasks
+                            I was assigned to implement the flood hazard. Since I already worked refactoring the fire hazard last week, and
+                            the flood hazard functions similarly to the fire hazard, and the implementation was not difficult as I expected.
+                        </p>
+                        <h4>
+                            Flood Hazard
+                        </h4>
+                        <p>
+                            The way how the flood hazard work is that leak would originate
+                            from the location the player's ship was attacked by enemies. Then,
+                            when the leak stays about 20 seconds without being repaired, the
+                            leaked room will begin to fill the room with water and it will take about
+                            10 seconds to fill the room. When the room is filled
+                            with water, it will then try to spread to neighboring rooms connected by doors.
+                            However, the water will only spread to a room that is connected by the opened door. Thus,
+                            the player should act carefully moving the crew as moving the crew to other rooms
+                            involves opening and closing doors.
+                        </p>
+                        <p>
+                            Also, the flood hazard will cause the system to be downed and any crew members staying in the flooded room
+                            will take damage constantly unless they quickly leave that room.
+                        </p>
+                        <p>
+                            Below is a code snippet of flood hazard which is similar to how fire hazard works:
+                        </p>
+                        <p style="text-align:center;"><img src="devblog/sprint3/water_code.png" alt="pic of Project Light script" width="750"></p>
+                        <p>
+                            1. This is the short gameplay of the flood hazard spreading when all doors in the ship are <b>opened:</b>
+                        </p>
+                        <p style="text-align:center;">
+                            <video width="800" height="600" controls>
+                                <source src="devblog/sprint3/water_hazard_closed.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                            </video>
+                        </p>
+                        <p>
+                            I am using the debug console menu to manually cause the leak in the room and let it spread out in the player ship.
+                            In the actual game, the flood hazard will be caused by the enemy's attack with a certain probability (Note: I have disabled
+                            the enemy ship because they kept firing their weapon and hindered me from recording a video. In the actual game, the enemy
+                            ship will be located at the top right corner).
+                         </p>
+                         <p>
+                            2. And here is the short gameplay of the flood hazard spreading when all doors in the ship are <b>closed:</b>
+                         </p>
+                         <p style="text-align:center;">
+                            <video width="800" height="600" controls>
+                                <source src="devblog/sprint3/water_hazard_opened.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                            </video>
+                        </p>
+                        <p>
+                            As you can see, the flood does not spread to neighboring rooms if they are connected by closed doors. I also noticed that
+                            some frame drops are occurring whenever the flood hazard exists in either player or the enemy ship room. Therefore, I should
+                            keep this in my mind and work on optimizations during the stability check weeks.
+                         </p>
+                         <h4>
+                            Bugs Fixing
+                         </h4>
+                         <p>
+                            The next major task I did was to report any bugs and assign some of them to myself to fix. Because we spent much time on
+                            implementing a feature and not caring about the stability, there were more than 70 bugs reported when this week started.
+                            Thus, all the programmers focused on tackling these bugs as much as possible to put the game on a stable status.
+                         </p>
+                         <p>
+                            I fixed around 6 - 7 bugs out of 70 bugs for this week. However, since it will take too much space to list all of them here, I will
+                            list one of them here as an example which is crucial but also was simple to fix it unexpectedly.
+                         </p>
+                         <p>
+                            One of the bugs I fixed was that the enemy shield room had two ShieldRoomManager components when they were supposed to have only one ShieldRoomManager
+                            for each of them. This was not a huge problem if the enemy ship had a single shield but when they have two shields, shields would not
+                            recharge after the shields get taken down. This was because two ShieldRoomManagers in a single shield room were referencing two different
+                            shield objects and there was confusion about which shield room is responsible for which shield object. Thus, all I needed to was
+                            make sure the shield room in the enemy ship only has one ShieldRoomManager component. And the solution turned out to be simple.
+                         </p>
+                         <p style="text-align:center;"><img src="devblog/sprint3/bug_fix.png" alt="pic of Project Light script fixing bug" height="400"></p>
+                         <p>
+                            This function, AddFunctionalityManagerComponentToRoom() which
+                            adds the corresponding room manager component based on the scriptable object
+                            this component was attached and was getting called twice when the object was enabled in the scene. Therefore,
+                            all I had to do was make sure that this function gets only called once when the enemyship is enabled on the scene.
+                         </p>
+                         <p style="text-align:center;"><img src="devblog/sprint3/enemyship.png" alt="pic of Project Light enemy ship inspector" height="500"></p>
+                         <p>
+                            Now, the enemy ship finally has one ShieldRoomManager component!
+                         </p>
+                    </div>
+                    <div>
+                        <h3>Playtesting (3 hours)</h3>
+                        <p>
+                            Because half of this sprint focused on bug fixing, I playtested our game for many hours
+                            using Unity editor and listed out possible bugs on Jira. Then assigned bugs
+                            that I wanted to work on.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Meetings (4 hours 30 MINUTES)</h3>
+                        <p>For 4.5 of my 24 hours of bi-weekly involvement, I spent my time in the studio meeting including
+                            squad and department meetings in-person at BBB. <br/> <br/>
+                            In the squad meeting, we playtested our game and took notes on bugs encountered and feedback on
+                            current game mechanics and level designs.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Hours Breakdown</h3>
+                        <ul style="text-align:center; list-style-type: none;">
+                            <li>PROGRAMMING AND REFACTORING: 17 HOURS</li>
+                            <li>PLAYTESTING: 3 HOUR</li>
+                            <li>MEETINGS: 4 HOURS 30 MINUTES</li>
+                            <li><b>TOTAL HOURS FOR PRE-BETA SPRINT 1: 24 HOURS 30 MINUTES</b></li>
+                        </ul>
+                    </div>
+                </body>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <section class="split contact">
+                <section>
+                    <h3>Email</h3>
+                    <p><a href="mailto:hlee0211@gmail.com">hlee0211@gmail.com</a></p>
+                </section>
+                <section>
+                    <h3>Social</h3>
+                    </ul>
+                    <ul class="icons alt">
+                        <li><a href="https://www.linkedin.com/in/hon-lee-542b43191/" target="_blank"
+                                class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="https://github.com/hlee9911" target="_blank"
+                                class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                    </ul>
+                </section>
+            </section>
+        </footer>
+
+        <!-- Copyright -->
+        <div id="copyright">
+            <ul>
+                <li>Powered by <a href="https://html5up.net">HTML5 UP Massively</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
