@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Hon Lee - Project Light: Beta 2</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" href="/images/city.jpg" type="image/x-icon">
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo">Project Light: Pre-Beta 2 Sprint</a>
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="index.html">Projects</a></li>
+                <li><a href="aboutme.html">About Me</a></li>
+                <li><a href="https://drive.google.com/file/d/1wNzerjUPJfGMa-IlzcF_glGGhJd6Kd8p/view?usp=sharing"
+                        target="_blank">Resume</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/hon-lee-542b43191/" target="_blank"
+                        class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                <li><a href="https://github.com/hlee9911" target="_blank" class="icon brands alt fa-github"><span
+                            class="label">GitHub</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Post -->
+            <section class="post">
+                <header class="major">
+                    <h1>Pre-Beta 2 Sprint</h1>
+                    <h3>Oct 31st, 2022 to Nov 14th, 2022 - More systems implementations and Bugs Fix</h3>
+                </header>
+                <body class="major">
+                    <p style="text-align:center;"><img src="images/o2yL8R.png" alt="pic of Project Light cover art" width="750"> <br/></p>
+                    <div>
+                        <p>
+                            For this sprint, my primary tasks were to implement new systems to provide more interesting choices to a player.
+                            These new systems are Sonar Shields and EMP Systems. The functionality parts of these new systems are now in the game
+                            and since I was the one who created the entire architecture of how the ship system is structured, creating a new system
+                            was pretty straightforward. Although there needs to be more play-testings and polish required as we are still using temporary art assets.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Programming and Development (15 hours)</h3>
+                        <p>
+                            My major task for this sprint was to implement Sonar Shield and EMP systems into the game. The sonar shield once installed
+                            in the player ship will protect from the enemy's sonar projectiles. In addition to that, the sonar shield will
+                            grant the player additional evasiveness and has a small chance of reversing the enemy's attack priority whenever the enemy attacks.
+                           
+                            On the other hand, the EMP system once installed, provides an active skill that the player can activate anytime
+                            during the gameplay that will disable the enemy's weapons for a short period. This was inspired by our
+                            study case, FTL's cloaking system which increases the evasiveness of the player's ship significantly. But our
+                            EMP systems simply disable the enemy's weapons for a short period. Due to this powerful skill, the EMP system
+                            has a very long time cooldown and any slight damage to a room with an EMP system installed will deactivate the EMP system.
+                        </p>
+                        <h4>
+                            Sonar Shield
+                        </h4>
+                        <p>
+                            A <b>sonar shield</b> prevents sonar projectiles from enemies. This means that I need to make sure that it only
+                            blocks the sonar projectiles, not the weapon projectiles. This might put a player to be in a disadvantage
+                            because the maximum shield the player can install is two and if one of them is a sonar shield, technically the
+                            player only has one shield to protect their ship against the enemy's weapon projectiles. To compensate for this, we
+                            incremented the maximum # of shields the player can install to 3. To be exact, 2 regular shields and an additional
+                            special shield. So hopefully, this would allow players to install special shields along with regular shields.
+                        </p>
+                        <p>
+                            Additionally, I have already mentioned above that the sonar shield also provides hidden stat boosts to a player
+                            that will increases the survivability of the player:
+                        </p>
+                        <ul style="list-style-type: none">
+                            <li>
+                                1. Grants additional 5% evasiveness to the player's ship.
+                            </li>
+                            <li>
+                                2. Has a 10% chance of reversing the enemy's attack priority whenever an enemy attacks.
+                            </li>
+                        </ul>
+                        <p>
+                            However, because this is a hidden feature, players need to figure out this by themselves.
+                        </p>
+                        <p>
+                            Since I was the one who created the architecture of the ship system and spent much time integrating shield functionality, the Development
+                            process of implementing a new variation of the existing system has gone relatively smoothly.
+                        </p>
+                        <p>
+                            Below is <b>short demonstration</b> of how sonar shield works:
+                        </p>
+                        <p style="text-align:center;">
+                            <video width="800" height="600" controls>
+                                <source src="devblog/sprint4/sonar_shield.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                            </video>
+                        </p>
+                        <p>
+                            As you can see from the demo, the sonar shield (a shield with turquoise color) prevents the enemy's sonar projectiles
+                            (wifi looking thing) but it does not block the enemy's other projectiles such as torpedoes thus near the end of the demo,
+                            the weapon projectile passes through a sonar shield and gets blocked by a regular shield.
+                         </p>
+                         <h4>
+                            EMP System
+                        </h4>
+                        <p>
+                            The additional system that I had to create was <b>EMP System</b> which disable all enemy weapons once activated.
+                            This system is a system that needs to be installed in one of the rooms like other systems but it does not need
+                            to be manned to be activated. When activated, it will disable the enemy's weapons for 2 seconds. Due to the powerful
+                            advantages it provides, it has a very long cooldown time (70 seconds) and even tiny damage to the room that
+                            this system is installed will cause this feature to be unavailable.
+                        </p>
+                        <p>
+                            For the development side, because this is a new system and not a variation of existing systems, the development
+                            time took longer than I expected, however, I still managed to get it working. But as I said above, a lot of play-testings
+                            are required to make sure that they function as expected. And these should be the main tasks for we, programmers should tackle
+                            in the next and the last sprint.
+                        </p>
+                        <p>
+                            Here is the screenshot of the code snippet of the EMP system's disabling weapons function using a simple IENumerator:
+                        </p>
+                        <p style="text-align:center;"><img src="devblog/sprint4/emp_code.png" alt="pic of Project Light EMP code" height="400"></p>
+                        <p>
+                            And here is the short demo of using an <b>EMP system</b>:
+                        </p>
+                         <p style="text-align:center;">
+                            <video width="800" height="600" controls>
+                                <source src="devblog/sprint4/emp.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                            </video>
+                        </p>
+                        <p>
+                            For the demonstration purpose, I've extended the duration of disabling time to 10 seconds but in the actual game,
+                            it will be reduced to around 2 seconds. When the emp is activated, all enemy's weapons turn red and they cannot
+                            be fired. The enemy was able to fire the sonar projectile during the demo but sonar and weapons are two different systems.
+                            Thus, from the demo, my EMP system is working as expected (Also, please ignore the huge radar sprite, we are working on
+                            swapping to much more polished art assets).
+                        </p>
+                         <h4>
+                            Bug Fix
+                         </h4>
+                         <p>
+                            Something I noticed during the playtesting was that whenever the room started flooding, the framerate dropped by around
+                            20 fps on my local machine. Because I am using one of the recent gaming laptops to test, the fps drop was not that significant,
+                            but it was still noticeable. Therefore, I deiced to investigate the issue and I found that debugging statement in the flood hazard
+                            function was causing the framerate drop. I was surprised that even printing debugging statements can cause a pretty huge framerate
+                            drop. So I removed most of the Debug.Log statements in the flood hazard script and now there is no more fps drop!
+                            One takeaway from this is also that a <b>Unity Profiler</b> is an awesome feature when it comes to investigating performance issues.
+                         </p>
+                    </div>
+                    <div>
+                        <h3>            
+                        Discussions (1 hour)
+                        </h3>
+                        <p>
+                            Because we are in the second to the last spring, I needed to make sure that my implementations
+                            are behaving as the designers intended. Thus, I discussed the behavior of an EMP system with
+                            the designer who designed this EMP system through Discord.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Playtesting (4 hours)</h3>
+                        <p>
+                            Since programming also is associated with testing how my implementation works as expected.
+                            I spent around 4 hours making sure that all my implementations of new systems works as expected.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Meetings (4 hours)</h3>
+                        <p>For 4 of my 24 hours of bi-weekly involvement, I spent my time in the studio meeting including
+                            squad and department meetings in-person at BBB. <br/> <br/>
+                            Also since this is our second to the last meeting, it was important to meet and discuss our current status
+                            of the game as the last sprint is about to start very soon including deciding the title of our game.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Hours Breakdown</h3>
+                        <ul style="text-align:center; list-style-type: none;">
+                            <li>PROGRAMMING AND DEVELOPMENT: 15 HOURS</li>
+                            <li>DISCUSSIONS: 1 HOUR</li>
+                            <li>PLAYTESTING: 4 HOURS</li>
+                            <li>MEETINGS: 4 HOURS</li>
+                            <li><b>TOTAL HOURS FOR PRE-BETA SPRINT 2: 24 HOURS</b></li>
+                        </ul>
+                    </div>
+                </body>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <section class="split contact">
+                <section>
+                    <h3>Email</h3>
+                    <p><a href="mailto:hlee0211@gmail.com">hlee0211@gmail.com</a></p>
+                </section>
+                <section>
+                    <h3>Social</h3>
+                    </ul>
+                    <ul class="icons alt">
+                        <li><a href="https://www.linkedin.com/in/hon-lee-542b43191/" target="_blank"
+                                class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="https://github.com/hlee9911" target="_blank"
+                                class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                    </ul>
+                </section>
+            </section>
+        </footer>
+
+        <!-- Copyright -->
+        <div id="copyright">
+            <ul>
+                <li>Powered by <a href="https://html5up.net">HTML5 UP Massively</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
