@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Hon Lee - Project Light: Gold 1</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" href="/images/city.jpg" type="image/x-icon">
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo">Project Light: Gold - Week 1 Sprint</a>
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="index.html">Projects</a></li>
+                <li><a href="aboutme.html">About Me</a></li>
+                <li><a href="https://drive.google.com/file/d/1wNzerjUPJfGMa-IlzcF_glGGhJd6Kd8p/view?usp=sharing"
+                        target="_blank">Resume</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/hon-lee-542b43191/" target="_blank"
+                        class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                <li><a href="https://github.com/hlee9911" target="_blank" class="icon brands alt fa-github"><span
+                            class="label">GitHub</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Post -->
+            <section class="post">
+                <header class="major">
+                    <h1>Gold - Week 1 Sprint</h1>
+                    <h3>Nov 14th, 2022 to Nov 27th, 2022 - Quality Assurances and Bugs Fix</h3>
+                </header>
+                <body class="major">
+                    <p style="text-align:center;"><img src="images/o2yL8R.png" alt="pic of Project Light cover art" width="750"> <br/></p>
+                    <div>
+                        <p>
+                            For this sprint, since the last sprint was the final development sprint for this project, we shifted to focus
+                            on fixing remaining bugs and QA for this sprint to ensure that all the aspects of our game meet the quality
+                            standard. We also had Thanksgiving break which allowed us to take a break and recover for the final sprint.
+                            As a result, this sprint was a bit shorter than the last sprint due to the break cutting our final sprint into two.
+                            Therefore, my main tasks for this sprint were to playtest, report any bugs, fix bugs, and take a break during the Thanksgiving
+                            break.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Programming, QA, and Bug fixes (7 hours)</h3>
+                        <p>
+                            As I mentioned above, my major task for this sprint was fixing bugs. Since I was the one who
+                            created the ship system architecture and decided to tackle bugs regarding ships and systems.
+                            Since there were quite a lot of bugs I fixed, I will list down a few bugs I fixed that I think that
+                            critical.
+                        </p>
+                        <h4>
+                            Doors
+                        </h4>
+                        <p>
+                           During my playtesting session, I noticed that doors do not play significant roles and I realized that doors
+                           never get jammed no matter what. Our original intention for doors is to pay attention to doors because if doors
+                           are opened and a hazard occurs near the opened door, the hazard will spread to the nearby room through the door
+                           that is opened. Thus, a player should pay attention to opened doors and left-click to close the door to prevent
+                           the hazard from spreading to neighboring rooms. However, before I fixed this issue, doors will always remain closed
+                           no matter what even when a crew passes through them. Thus, I made sure that there's a small chance that the door will
+                           get jammed if a crew passes through it, making a player manually close the jammed door if they don't want hazards to
+                           spread across the entire ship.
+                        </p>
+                        <p>
+                            Here's a short footage of <b>door getting jammed</b> when a crew passes through the door:
+                        </p>
+                        <p style="text-align:center;">
+                            <video width="800" height="600" controls>
+                                <source src="devblog/sprint5/door_jammed.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                            </video>
+                        </p>
+                        <p>
+                            As you can see from the demo, some doors get jammed and stay open when a crew passes through them.
+                            But it is hard to know if the door got jammed since there are no visual or audio messages that
+                            a particular door has been jammed. Thus, for the next step, I might going to add a simple visual effect
+                            such as changing the color of a jammed door to let a player know that this door is jammed.
+                        </p>
+                        <h4>
+                            Shop UI button tabs
+                        </h4>
+                        <p>
+                            The three shop UI button tabs also had issues when a player clicks one of three tabs, the other two
+                            unselected tabs do not change colors. Therefore, I made sure that a selected tab has a different color
+                            compared to the unselected tabs so that a player knows that they have selected this particular tab.
+                        </p>
+                        <p>
+                            And here is a footage of bug I fixed regarding <b>shop UI button tabs</b>:
+                        </p>
+                         <p style="text-align:center;">
+                            <video width="800" height="600" controls>
+                                <source src="devblog/sprint5/shop_ui.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                            </video>
+                        </p>
+                        <p>
+                            As you can see, the selected tab has a black color with green text while unselected tabs have a green
+                            background color with black text.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Playtesting (3 hours)</h3>
+                        <p>
+                            Because this sprint was mainly a QA sprint, the playtesting was the core aspect of the
+                            QA. Therefore, I spent around 3 hours finding any major and minor bugs, and also made sure that
+                            my fixes fixed issues.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Meetings (2 hours)</h3>
+                        <p>For 2 of my 24 hours of bi-weekly involvement, I spent my time in the studio meeting including
+                            squad and department meetings through discord meetings. <br/>
+                            Additionally, During the meeting, we also pitched some of the study cases we will be working on for the next
+                            Studio project.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>
+                            Extra
+                        </h3>
+                        <p>
+                            The title of Project Light was finally announced last week and it should be known as "Subtension"!
+                        </p>
+                        <p style="text-align:center;"><img src="devblog/sprint5/light_title.png" alt="pic of Project Light Title Announcement" height="200" width="800"></p>
+                        <p>
+                            This the title I submitted for our project during the title proposal, and I'm happy that the name I proposed got accepted!
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Hours Breakdown</h3>
+                        <ul style="text-align:center; list-style-type: none;">
+                            <li>QA AND BUG FIXES: 7 HOURS</li>
+                            <li>PLAYTESTING: 3 HOURS</li>
+                            <li>MEETINGS: 2 HOURS</li>
+                            <li><b>TOTAL HOURS FOR GOLD SPRINT 1: 12 HOURS</b></li>
+                        </ul>
+                    </div>
+                </body>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <section class="split contact">
+                <section>
+                    <h3>Email</h3>
+                    <p><a href="mailto:hlee0211@gmail.com">hlee0211@gmail.com</a></p>
+                </section>
+                <section>
+                    <h3>Social</h3>
+                    </ul>
+                    <ul class="icons alt">
+                        <li><a href="https://www.linkedin.com/in/hon-lee-542b43191/" target="_blank"
+                                class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="https://github.com/hlee9911" target="_blank"
+                                class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                    </ul>
+                </section>
+            </section>
+        </footer>
+
+        <!-- Copyright -->
+        <div id="copyright">
+            <ul>
+                <li>Powered by <a href="https://html5up.net">HTML5 UP Massively</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
