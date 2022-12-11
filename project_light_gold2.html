@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Hon Lee - Project Light: Gold 2</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" href="/images/city.jpg" type="image/x-icon">
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo">Project Light: Gold - Week 2 Sprint</a>
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="index.html">Projects</a></li>
+                <li><a href="aboutme.html">About Me</a></li>
+                <li><a href="https://drive.google.com/file/d/1wNzerjUPJfGMa-IlzcF_glGGhJd6Kd8p/view?usp=sharing"
+                        target="_blank">Resume</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/hon-lee-542b43191/" target="_blank"
+                        class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                <li><a href="https://github.com/hlee9911" target="_blank" class="icon brands alt fa-github"><span
+                            class="label">GitHub</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Post -->
+            <section class="post">
+                <header class="major">
+                    <h1>Gold - Week 2 Sprint</h1>
+                    <h3>Nov 28th, 2022 to Dec 10th, 2022 - Last Minute Bugs Fix and the Showcase</h3>
+                </header>
+                <body class="major">
+                    <p style="text-align:center;"><img src="images/o2yL8R.png" alt="pic of Project Light cover art" width="750"> <br/></p>
+                    <div>
+                        <p>
+                            For this sprint, similar to the last sprint, it was the last week to do QAs and
+                            fix any bugs we found for the final build on the showcase. Thus, self-playtesting
+                            and attending the remote playtesting session by advisors were great for tackling with
+                            remaining bugs.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Programming, and Bug fixes (8 hours)</h3>
+                        <p>
+                            The tasks I mostly worked on for this last sprint were to fix bugs specifically the health transitions
+                            between encounters using the saving and loading mechanics.
+                        </p>
+                        <h4>
+                            Ship Health Transition between Encounters
+                        </h4>
+                        <p>
+                            The ship's health should be transferred the as the player progress through the encounters. Meaning that
+                            when the player finishes with 50% hp for the first level, the 50% hp will be transferred to the next level
+                            and the player should approach the next level more carefully. However, for the build I playtested, the
+                            health did not transfer to the next level and started with the max level always. As a result, it makes
+                            our game way easier because even if your ship were close to getting destroyed, only if you can survive the current
+                            level, the ship's health will be reset to the max health. This was not our intended design, thus, I had to
+                            fix this bug using the save and loading system written by another programmer Howard.
+ 
+                            Reading and understanding the codebase written by someone else for the first time surely was challenging
+                            but asking questions and reading the comments left by the original programmer helped me to comprehend and
+                            fix the bug.
+                        </p>
+                        <p>
+                            And, Here's a short footage of <b>Ship Health</b> getting transferred to the next level without any issue:
+                        </p>
+                        <p style="text-align:center;">
+                            <video width="800" height="600" controls>
+                                <source src="devblog/sprint6/health.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                            </video>
+                        </p>
+                        <p>
+                            As you can see from the demo, the current health of the ship now transfers from encounter 1 to the
+                            shop and then from the shop to encounter 2. This would allow the player to use the pausing the
+                            game by pressing the spacebar to strategize their plan to maintain the ship's health for the longer
+                            survivability.
+                        </p>
+                        <h4>
+                            Ship Door Jamming Visual Indicator
+                        </h4>
+                        <p>
+                            In the previous blog post, I mentioned that I fixed the door jamming function that doors in the
+                            player ship get jammed when a crew passes through it however there's no visual indicator that represents
+                            if the door has been jammed. Therefore, for better UX, I added a yellow visual indicator for a door that got jammed for
+                            5 seconds.
+                        </p>
+                        <p>
+                            And here is footage of the <b>the visual indicator</b> when a door gets jammed:
+                        </p>
+                         <p style="text-align:center;">
+                            <video width="800" height="600" controls>
+                                <source src="devblog/sprint6/door_indicator.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                            </video>
+                        </p>
+                        <p>
+                            As you can see, the jammed door is highlighted in yellow. So the player should be able to click the door
+                            to close the door to prevent any hazards to spread to other rooms.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Playtesting (3 hours and 30 minutes)</h3>
+                        <p>
+                            Since this was the final sprint, the playtesting was very important for finding any last-minute
+                            bugs and report them on Jira. Therefore, while I was also fixing the bugs that I was assigned to, I
+                            also playtested at the same time to find any bugs that might cause issues during the showcase. <br>
+                           
+                            In addition, I attended a few remote playtesting sessions by advisors to gain helpful feedback and
+                            how they feel about our game in general.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Meetings (2 hours 45 minutes)</h3>
+                        <p>For 2.75 of my 12 hours of bi-weekly involvement, I spent my time for the last studios meeting
+                            for this project at the BBB. We did the last-minute playtesting for both projects and gather
+                            into the department meeting to go over the feedback for the studio this semester so that
+                            it can be improved in the future semester.  <br/>
+                        </p>
+                    </div>
+                    <div>
+                        <h3>
+                            Extra
+                        </h3>
+                        <p>
+                            I attended the 494 + EMU showcase on Friday 12/10 as a dev to show the games I worked on including this project and my EECS 494 final project.
+                            <p style="text-align:center;"><img src="devblog/Subtension.png" alt="Pic of Subtension cover art" height="400" width="800"></p>
+                        </p>
+                            I had a lot of fun at the showcase! I was able to meet with many different people and have them play Project Light and
+                            my EECS 494 final project. It's been a long journey since the summer of 2022 I joined the studios as a programmer to work on
+                            this project. My journey of Project Light might end here but I keep pursuing my game development journey and I hope
+                            to be a part of the WolverineSoft Studios again in the future!
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Hours Breakdown</h3>
+                        <ul style="text-align:center; list-style-type: none;">
+                            <li>PROGRAMMING AND BUG FIXES: 8 HOURS</li>
+                            <li>PLAYTESTING: 3 HOURS 30 MINUTES</li>
+                            <li>MEETINGS: 2 HOURS 45 MINUTES</li>
+                            <li><b>TOTAL HOURS FOR GOLD SPRINT 1: 14 HOURS 15 MINUTES</b></li>
+                        </ul>
+                    </div>
+                </body>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <section class="split contact">
+                <section>
+                    <h3>Email</h3>
+                    <p><a href="mailto:hlee0211@gmail.com">hlee0211@gmail.com</a></p>
+                </section>
+                <section>
+                    <h3>Social</h3>
+                    </ul>
+                    <ul class="icons alt">
+                        <li><a href="https://www.linkedin.com/in/hon-lee-542b43191/" target="_blank"
+                                class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="https://github.com/hlee9911" target="_blank"
+                                class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                    </ul>
+                </section>
+            </section>
+        </footer>
+
+        <!-- Copyright -->
+        <div id="copyright">
+            <ul>
+                <li>Powered by <a href="https://html5up.net">HTML5 UP Massively</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
