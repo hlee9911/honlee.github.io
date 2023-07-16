@@ -4012,7 +4012,7 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 }
 
 #main>.posts>* {
-	padding: 4rem;
+	padding: 2rem;
 	width: 50%;
 }
 
@@ -4870,10 +4870,10 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 	/* max-width: 50%; */
 	position: relative;
 	/* margin: auto; */
-	max-width: 45%;
+	max-width: 47.5%;
 	max-height: 300px;
 	float: left;
-	margin-right: 25px;
+	margin-right: 20px;
 	margin-top: 35px;
 }
   
