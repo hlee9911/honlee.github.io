@@ -7,8 +7,8 @@ var indexes = {
     fiveSliderIndex: 1,
     sixSliderIndex: 1,
     sevenSliderIndex: 1,
-    eightSliderIndex: 1,
-    nineSliderIndex: 1,
+    // eightSliderIndex: 1,
+    // nineSliderIndex: 1,
     tenSliderIndex: 1,
 };
 
@@ -19,8 +19,8 @@ showSlides(indexes.fourthSliderIndex, 'fourth', 'fourthSliderIndex');
 showSlides(indexes.fiveSliderIndex, 'five', 'fiveSliderIndex');
 showSlides(indexes.sixSliderIndex, 'six', 'sixSliderIndex');
 showSlides(indexes.sevenSliderIndex, 'seven', 'sevenSliderIndex');
-showSlides(indexes.eightSliderIndex, 'eight', 'eightSliderIndex');
-showSlides(indexes.nineSliderIndex, 'nine', 'nineSliderIndex');
+// showSlides(indexes.eightSliderIndex, 'eight', 'eightSliderIndex');
+// showSlides(indexes.nineSliderIndex, 'nine', 'nineSliderIndex');
 showSlides(indexes.tenSliderIndex, 'ten', 'tenSliderIndex');
 
 // Next/previous controls
