@@ -10,6 +10,7 @@ var indexes = {
     // eightSliderIndex: 1,
     // nineSliderIndex: 1,
     tenSliderIndex: 1,
+    elevenSliderIndex: 1,
 };
 
 showSlides(indexes.firstSliderIndex, 'first', 'firstSliderIndex');
@@ -22,6 +23,7 @@ showSlides(indexes.sevenSliderIndex, 'seven', 'sevenSliderIndex');
 // showSlides(indexes.eightSliderIndex, 'eight', 'eightSliderIndex');
 // showSlides(indexes.nineSliderIndex, 'nine', 'nineSliderIndex');
 showSlides(indexes.tenSliderIndex, 'ten', 'tenSliderIndex');
+showSlides(indexes.elevenSliderIndex, 'eleven', 'elevenSliderIndex');
 
 // Next/previous controls
 function plusSlides(n, id, index) { // n - number of slide, id - container id, index - current slide number in slider
