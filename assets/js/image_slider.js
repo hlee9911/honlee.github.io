@@ -11,6 +11,7 @@ var indexes = {
     // nineSliderIndex: 1,
     tenSliderIndex: 1,
     elevenSliderIndex: 1,
+    tweleveSliderIndex: 1,
 };
 
 showSlides(indexes.firstSliderIndex, 'first', 'firstSliderIndex');
@@ -24,6 +25,7 @@ showSlides(indexes.sevenSliderIndex, 'seven', 'sevenSliderIndex');
 // showSlides(indexes.nineSliderIndex, 'nine', 'nineSliderIndex');
 showSlides(indexes.tenSliderIndex, 'ten', 'tenSliderIndex');
 showSlides(indexes.elevenSliderIndex, 'eleven', 'elevenSliderIndex');
+showSlides(indexes.tweleveSliderIndex, 'twelve', 'tweleveSliderIndex');
 
 // Next/previous controls
 function plusSlides(n, id, index) { // n - number of slide, id - container id, index - current slide number in slider
