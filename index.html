@@ -42,7 +42,7 @@
 			<ul class="links">
 				<li class="active"><a href="index.html">Projects</a></li>
 				<li><a href="aboutme.html">About</a></li>
-				<li><a href="https://drive.google.com/file/d/1ee3Dhdu6AVK11eLqWS15INH1NLq4JEdw/view?usp=sharing"
+				<li><a href="https://drive.google.com/file/d/1dYNlW42WQPBqrW0bLyn8Xh6Cvm4EKUjL/view?usp=sharing"
 						target="_blank">Resume</a></li>
 				<li><a href="blogs.html">Blog</a></li>
 				<li><a href="contact.html">Contact</a></li>
@@ -89,19 +89,102 @@
 			<section class="posts">
 				<article>
 					<header style="font-family:sans-serif;">
+						<h2>Sparkball - Season Zero<br/></h2>
+						<li><b>Released Date:</b> TBA (Demo available)</li>
+						<li><b>My Role:</b> Game Backend Engineer</li>
+						<li><b>Software Used:</b> Unreal 5, Blueprint, C++, Snapser, Go, Protobuf, Perforce P4V, Docker, ClickUp</li>
+					</header>
+					<div class="slideshow-container" id="first">
+						<!-- Full-width images with number and caption text -->
+							<div class="mySlides fade">
+								<iframe
+									class="video"
+									allowfullscreen="allowfullscreen" 
+									frameborder="0"
+									src="https://www.youtube.com/embed/Fvk0a0wvUzk">
+								</iframe>
+							</div>
+							<div class="mySlides fade">
+								<iframe
+									class="video"
+									allowfullscreen="allowfullscreen" 
+									frameborder="0"
+									src="https://www.youtube.com/embed/EJ3t_1i7rZM">
+								</iframe>
+							</div>		
+							<div class="mySlides fade">
+								<a href="https://store.steampowered.com/app/672890/Sparkball/" target="_blank">
+									<img src="images/Sparkball/sparkball3.jpg" style="width:100%">
+								</a>
+							</div>
+							<div class="mySlides fade">
+								<a href="https://store.steampowered.com/app/672890/Sparkball/" target="_blank">
+									<img src="images/Sparkball/sparkball1.jpg" style="width:100%">
+								</a>
+							</div>						
+							<div class="mySlides fade">
+								<a href="https://store.steampowered.com/app/672890/Sparkball/" target="_blank">
+									<img src="images/Sparkball/sparkball2.jpg" style="width:100%">
+								</a>
+							</div>
+							<div class="mySlides fade">
+								<a href="https://store.steampowered.com/app/672890/Sparkball/" target="_blank">
+									<img src="images/Sparkball/sparkball4.jpg" style="width:100%">
+								</a>
+							</div>
+							<div class="mySlides fade">
+								<a href="https://store.steampowered.com/app/672890/Sparkball/" target="_blank">
+									<img src="images/Sparkball/sparkball5.jpg" style="width:100%">
+								</a>
+							</div>	
+						<!-- Next and previous buttons -->
+						<a class="prev" onclick="plusSlides(-1, 'first', 'firstSliderIndex')">&#10094;</a>
+							<a class="next" onclick="plusSlides(1, 'first', 'firstSliderIndex')">&#10095;</a>
+							<br />
+							<!-- The dots/circles -->
+						<div style="text-align:center">
+							<span class="dot" onclick="currentSlide(1, 'first', 'firstSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(2, 'first', 'firstSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(3, 'first', 'firstSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(4, 'first', 'firstSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(5, 'first', 'firstSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(6, 'first', 'firstSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(7, 'first', 'firstSliderIndex')"></span>
+						</div>
+					</div>
+					<div style="float:left; width: 47.5%; font-family:sans-serif; font-size: 10pt; text-align: left; padding-top: 25px">
+						<p><b>A fast-paced 4v4 "sports brawler" where players choose from a roster of unique heroes 
+							and skillfully balance scoring goals and engaging in combat to outplay the opposing team. 
+							Often described as a blend of League of Legends and Rocket League, 
+							Sparkball delivers an exhilarating mix of action and strategy, keeping players hooked as they master its deep and dynamic gameplay.</b>
+						</p>
+						<ul>
+							<b>Contributions:</b>
+							<li>Implemented the whisper chat system, enabling users to send and receive direct messages through Snapser API integration.</li>
+    						<li>Refactored the friends, parties, and matchmaking systems to work with the latest version of Snapser, 
+								connecting Unreal Engine 5 (C++ and Blueprint) with the new backend architecture.</li>
+							<li>Developed, tested, and maintained backend API calls using Go, Protobuf, and Docker to 
+								retrieve card data from the database for a card-based web game.</li>
+							<li>Supported a successful Steam Next Fest launch with 2,399 unique players over 7 days and 58% 1-hour retention, 
+								contributing to smooth matchmaking and reliable backend services throughout the event.</li>
+						</ul>
+						<p>
+							Be sure to check out <b><a href="https://discord.com/invite/playsparkball" target="_blank">Official
+								Discord Server</a></b> for more information!
+						</p>
+						<ul class="actions special">
+							<li><a href="https://store.steampowered.com/app/672890/Sparkball/" target="_blank" class="button">View Project</a></li>
+						</ul>
+					</div>
+				</article>
+				<article>
+					<header style="font-family:sans-serif;">
 						<h2>Grimlight<br /></h2>
 						<li><b>Released Date:</b> July 2022</li>
 						<li><b>My Role:</b> Backend Game Developer</li>
 						<li><b>Software Used:</b> Unity, C#(.NET framework), AWS, Plastic SCM, Jira, Confluence</li>
-						<li><b>Team Size:</b> ~20</li>
 					</header>
-					<!-- <a href="https://grimlight.global/" target="_blank" class="image fit"><img
-							src="images/grimlight.jpg" 
-							onmouseover="this.src='images/grimlight2.gif'"
-							onmouseout="this.src='images/grimlight.jpg'"
-							alt="Grimlight Main Illustration" /></a> -->
-					<div class="slideshow-container" id="first">
-						<!-- Full-width images with number and caption text -->
+					<div class="slideshow-container" id="second">
 							<div class="mySlides fade">
 								<iframe
 									class="video"
@@ -136,17 +219,17 @@
 								</a>
 							</div>	
 						<!-- Next and previous buttons -->
-						<a class="prev" onclick="plusSlides(-1, 'first', 'firstSliderIndex')">&#10094;</a>
-							<a class="next" onclick="plusSlides(1, 'first', 'firstSliderIndex')">&#10095;</a>
+						<a class="prev" onclick="plusSlides(-1, 'second', 'secondSliderIndex')">&#10094;</a>
+							<a class="next" onclick="plusSlides(1, 'second', 'secondSliderIndex')">&#10095;</a>
 							<br />
 							<!-- The dots/circles -->
 						<div style="text-align:center">
-							<span class="dot" onclick="currentSlide(1, 'first', 'firstSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(2, 'first', 'firstSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(3, 'first', 'firstSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(4, 'first', 'firstSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(5, 'first', 'firstSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(6, 'first', 'firstSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(1, 'second', 'secondSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(2, 'second', 'secondSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(3, 'second', 'secondSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(4, 'second', 'secondSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(5, 'second', 'secondSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(6, 'second', 'secondSliderIndex')"></span>
 						</div>
 					</div>
 					<div style="float:left; width: 47.5%; font-family:sans-serif; font-size: 10pt; text-align: left; padding-top: 25px">
@@ -183,11 +266,10 @@
 						<li><b>Released Date:</b> October 2024</li>
 						<li><b>My Role:</b> Backend Game Developer </li>
 						<li><b>Software Used:</b> Unity, C#, Python, Amazon AWS(Lambda, DynamoDB, API Gateway), Azure PlayFab, Plastic SCM, Jira</li>
-						<li><b>Team Size:</b> 8</li>
 					</header>
 					<!-- <a href="https://store.steampowered.com/app/2377230/Claws__Chaos/" target="_blank" class="image fit"><img
 						src="images/ClawsAndChaos/c&c_logo.png" alt="Claws & Chaos main illustration" /></a> -->
-					<div class="slideshow-container" id="eleven">
+					<div class="slideshow-container" id="third">
 						<!-- Full-width images with number and caption text -->
 							<div class="mySlides fade">
 								<iframe
@@ -241,20 +323,20 @@
 								</a>
 							</div>				
 						<!-- Next and previous buttons -->
-						<a class="prev" onclick="plusSlides(-1, 'eleven', 'elevenSliderIndex')">&#10094;</a>
-							<a class="next" onclick="plusSlides(1, 'eleven', 'elevenSliderIndex')">&#10095;</a>
+						<a class="prev" onclick="plusSlides(-1, 'third', 'thirdSliderIndex')">&#10094;</a>
+							<a class="next" onclick="plusSlides(1, 'third', 'thirdSliderIndex')">&#10095;</a>
 							<br />
 							<!-- The dots/circles -->
 						<div style="text-align:center">
-							<span class="dot" onclick="currentSlide(1, 'eleven', 'elevenSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(2, 'eleven', 'elevenSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(3, 'eleven', 'elevenSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(4, 'eleven', 'elevenSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(5, 'eleven', 'elevenSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(6, 'eleven', 'elevenSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(7, 'eleven', 'elevenSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(8, 'eleven', 'elevenSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(9, 'eleven', 'elevenSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(1, 'third', 'thirdSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(2, 'third', 'thirdSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(3, 'third', 'thirdSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(4, 'third', 'thirdSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(5, 'third', 'thirdSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(6, 'third', 'thirdSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(7, 'third', 'thirdSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(8, 'third', 'thirdSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(9, 'third', 'thirdSliderIndex')"></span>
 						</div>
 					</div>
 					<div style="float:left; width: 47.5%; font-family:sans-serif; font-size: 10pt; text-align: left; padding-top: 25px">
@@ -293,11 +375,11 @@
 						<li><b>Released Date:</b> March 2023</li>
 						<li><b>My Role:</b> Game Programmer Intern </li>
 						<li><b>Software Used:</b> Unity, C#, Firebase, Git, Jira, Figma</li>
-						<li><b>Team Size:</b> 5</li>
+						<!-- <li><b>Team Size:</b> 5</li> -->
 					</header>
 					<!-- <a href="https://play.google.com/store/apps/details?id=com.NochiStudios.UntoldAtlas" target="_blank" class="image fit"><img
 						src="images/UntoldAtlas/atlas.png" alt="Untold Atlas main illustration" /></a> -->
-					<div class="slideshow-container" id="second">
+					<div class="slideshow-container" id="fourth">
 						<!-- Full-width images with number and caption text -->
 							<div class="mySlides fade">
 								<iframe
@@ -333,17 +415,17 @@
 								</a>
 							</div>						
 						<!-- Next and previous buttons -->
-						<a class="prev" onclick="plusSlides(-1, 'second', 'secondSliderIndex')">&#10094;</a>
-							<a class="next" onclick="plusSlides(1, 'second', 'secondSliderIndex')">&#10095;</a>
+						<a class="prev" onclick="plusSlides(-1, 'fourth', 'fourthSliderIndex')">&#10094;</a>
+							<a class="next" onclick="plusSlides(1, 'fourth', 'fourthSliderIndex')">&#10095;</a>
 							<br />
 							<!-- The dots/circles -->
 						<div style="text-align:center">
-							<span class="dot" onclick="currentSlide(1, 'second', 'secondSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(2, 'second', 'secondSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(3, 'second', 'secondSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(4, 'second', 'secondSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(5, 'second', 'secondSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(6, 'second', 'secondSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(1, 'fourth', 'fourthSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(2, 'fourth', 'fourthSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(3, 'fourth', 'fourthSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(4, 'fourth', 'fourthSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(5, 'fourth', 'fourthSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(6, 'fourth', 'fourthSliderIndex')"></span>
 						</div>
 					</div>
 					<div style="float:left; width: 47.5%; font-family:sans-serif; font-size: 10pt; text-align: left; padding-top: 25px">
@@ -379,11 +461,11 @@
 						<li><b>Released Date:</b> TBA (Demo available)</li>
 						<li><b>My Role:</b> Game Developer, Level Designer</li>
 						<li><b>Software Used:</b> Unity, C#, Plastic SCM, Jira, Figma, Miro</li>
-						<li><b>Team Size:</b> ~10</li>
+						<!-- <li><b>Team Size:</b> ~10</li> -->
 					</header>
 					<!-- <a href="https://bluebirdstudios.net/" target="_blank" class="image fit"><img
 							src="images/treatteam1.jpg" alt="Treat Team main illustration" /></a>-->
-					<div class="slideshow-container" id="third">
+					<div class="slideshow-container" id="fifth">
 						<!-- Full-width images with number and caption text -->
 							<div class="mySlides fade">
 								<a href="https://bluebirdstudios.net/" target="_blank">
@@ -406,15 +488,15 @@
 								</a>
 							</div>
 						<!-- Next and previous buttons -->
-						<a class="prev" onclick="plusSlides(-1, 'third', 'thirdSliderIndex')">&#10094;</a>
-							<a class="next" onclick="plusSlides(1, 'third', 'thirdSliderIndex')">&#10095;</a>
+						<a class="prev" onclick="plusSlides(-1, 'fifth', 'fifthSliderIndex')">&#10094;</a>
+							<a class="next" onclick="plusSlides(1, 'fifth', 'fifthSliderIndex')">&#10095;</a>
 							<br />
 							<!-- The dots/circles -->
 						<div style="text-align:center">
-							<span class="dot" onclick="currentSlide(1, 'third', 'thirdSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(2, 'third', 'thirdSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(3, 'third', 'thirdSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(4, 'third', 'thirdSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(1, 'fifth', 'fifthSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(2, 'fifth', 'fifthSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(3, 'fifth', 'fifthSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(4, 'fifth', 'fifthSliderIndex')"></span>
 						</div>
 					</div>
 					<div style="float:left; width: 47.5%; font-family:sans-serif; font-size: 10pt; text-align: left; padding-top: 25px">
@@ -439,17 +521,17 @@
 				</article>
 				<article>
 					<header style="font-family:sans-serif;">
-						<h2>Project Nova: Cellosseum<br />
+						<h2>Cellosseum<br />
 						</h2>
 						<li><b>Released Date:</b> September 2023</li>
 						<li><b>My Role:</b> Gameplay/System Programmer</li>
 						<li><b>Software Used:</b> Unity, C#, Bitbucket, Jira, Confluence</li>
-						<li><b>Team Size:</b> ~50</li>
+						<!-- <li><b>Team Size:</b> ~50</li> -->
 					</header>
 					<!-- <a href="https://wolverinesoft-studio.itch.io/subtension" target="_blank"
 						class="image fit"><img src="devblog/Subtension.png"
 							alt="Subtension main illustration" /></a> -->
-					<div class="slideshow-container" id="ten">
+					<div class="slideshow-container" id="sixth">
 						<!-- Full-width images with number and caption text -->
 							<div class="mySlides fade">
 								<iframe class="video"
@@ -479,16 +561,16 @@
 								</a>
 							</div>
 						<!-- Next and previous buttons -->
-						<a class="prev" onclick="plusSlides(-1, 'ten', 'tenSliderIndex')">&#10094;</a>
-							<a class="next" onclick="plusSlides(1, 'ten', 'tenSliderIndex')">&#10095;</a>
+						<a class="prev" onclick="plusSlides(-1, 'sixth', 'sixthSliderIndex')">&#10094;</a>
+							<a class="next" onclick="plusSlides(1, 'sixth', 'sixthSliderIndex')">&#10095;</a>
 							<br />
 							<!-- The dots/circles -->
 						<div style="text-align:center">
-							<span class="dot" onclick="currentSlide(1, 'ten', 'tenSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(2, 'ten', 'tenSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(3, 'ten', 'tenSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(4, 'ten', 'tenSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(5, 'ten', 'tenSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(1, 'sixth', 'sixthSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(2, 'sixth', 'sixthSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(3, 'sixth', 'sixthSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(4, 'sixth', 'sixthSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(5, 'sixth', 'sixthSliderIndex')"></span>
 						</div>
 					</div>
 					<div style="float:left; width: 47.5%; font-family:sans-serif; font-size: 10pt; text-align: left; padding-top: 25px">
@@ -521,17 +603,17 @@
 				</article>
 				<article>
 					<header style="font-family:sans-serif;">
-						<h2>Project Light: Subtension<br />
+						<h2>Subtension<br />
 						</h2>
 						<li><b>Released Date:</b> December 2022</li>
 						<li><b>My Role:</b> Gameplay Programmer</li>
 						<li><b>Software Used:</b> Unity, C#, Bitbucket, Jira, Confluence</li>
-						<li><b>Team Size:</b> >30</li>
+						<!-- <li><b>Team Size:</b> >30</li> -->
 					</header>
 					<!-- <a href="https://wolverinesoft-studio.itch.io/subtension" target="_blank"
 						class="image fit"><img src="devblog/Subtension.png"
 							alt="Subtension main illustration" /></a> -->
-					<div class="slideshow-container" id="fourth">
+					<div class="slideshow-container" id="seventh">
 						<!-- Full-width images with number and caption text -->
 							<div class="mySlides fade">
 								<iframe class="video"
@@ -566,17 +648,17 @@
 								</a>
 							</div>
 						<!-- Next and previous buttons -->
-						<a class="prev" onclick="plusSlides(-1, 'fourth', 'fourthSliderIndex')">&#10094;</a>
-							<a class="next" onclick="plusSlides(1, 'fourth', 'fourthSliderIndex')">&#10095;</a>
+						<a class="prev" onclick="plusSlides(-1, 'seventh', 'seventhSliderIndex')">&#10094;</a>
+							<a class="next" onclick="plusSlides(1, 'seventh', 'seventhSliderIndex')">&#10095;</a>
 							<br />
 							<!-- The dots/circles -->
 						<div style="text-align:center">
-							<span class="dot" onclick="currentSlide(1, 'fourth', 'fourthSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(2, 'fourth', 'fourthSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(3, 'fourth', 'fourthSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(4, 'fourth', 'fourthSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(5, 'fourth', 'fourthSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(6, 'fourth', 'fourthSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(1, 'seventh', 'seventhSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(2, 'seventh', 'seventhSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(3, 'seventh', 'seventhSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(4, 'seventh', 'seventhSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(5, 'seventh', 'seventhSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(6, 'seventh', 'seventhSliderIndex')"></span>
 						</div>
 					</div>
 					<div style="float:left; width: 47.5%; font-family:sans-serif; font-size: 10pt; text-align: left; padding-top: 25px">
@@ -618,12 +700,12 @@
 						<li><b>Released Date:</b> August 2024</li>
 						<li><b>My Role:</b> Gameplay Programmer, Level Designer</li>
 						<li><b>Software Used:</b> Unreal Engine 5, Blueprint, Jira, Confluence, Diversion</li>
-						<li><b>Team Size:</b> 9</li>
+						<!-- <li><b>Team Size:</b> 9</li> -->
 					</header>
 					<!-- <a href="https://wolverinesoft-studio.itch.io/subtension" target="_blank"
 						class="image fit"><img src="devblog/Subtension.png"
 							alt="Subtension main illustration" /></a> -->
-					<div class="slideshow-container" id="twelve">
+					<div class="slideshow-container" id="eighth">
 						<!-- Full-width images with number and caption text -->
 							<div class="mySlides fade">
 								<a href="https://eciips3.itch.io/my-battery-is-low-and-its-getting-dark" target="_blank">
@@ -641,14 +723,14 @@
 								</a>
 							</div>
 						<!-- Next and previous buttons -->
-						<a class="prev" onclick="plusSlides(-1, 'twelve', 'tweleveSliderIndex')">&#10094;</a>
-							<a class="next" onclick="plusSlides(1, 'twelve', 'tweleveSliderIndex')">&#10095;</a>
+						<a class="prev" onclick="plusSlides(-1, 'eighth', 'eighthSliderIndex')">&#10094;</a>
+							<a class="next" onclick="plusSlides(1, 'eighth', 'eighthSliderIndex')">&#10095;</a>
 							<br />
 							<!-- The dots/circles -->
 						<div style="text-align:center">
-							<span class="dot" onclick="currentSlide(1, 'twelve', 'tweleveSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(2, 'twelve', 'tweleveSliderIndex')"></span>
-							<span class="dot" onclick="currentSlide(3, 'twelve', 'tweleveSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(1, 'eighth', 'eighthSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(2, 'eighth', 'eighthSliderIndex')"></span>
+							<span class="dot" onclick="currentSlide(3, 'eighth', 'eighthSliderIndex')"></span>
 						</div>
 					</div>
 					<div style="float:left; width: 47.5%; font-family:sans-serif; font-size: 10pt; text-align: left; padding-top: 25px">
@@ -671,7 +753,6 @@
 									to create a psychological horror experience that heightens player tension.
 								</li>
 							</ul>
-
 						</p>
 						<ul class="actions special">
 							<li><a href="https://eciips3.itch.io/my-battery-is-low-and-its-getting-dark" target="_blank"
@@ -680,22 +761,14 @@
 						</ul>
 					</div>
 				</article>
-				<article>
+				<!-- <article>
 					<header style="font-family:sans-serif;">
 						<h2>Granny's Day Off<br /> </h2>
 						<li><b>Released Date:</b> December 2022</li>
 						<li><b>Software Used:</b> Unity, C#, GitHub, Jira</li>
 						<li><b>Team Size:</b> 5</li>
 					</header>
-					<!-- <a href="https://b00pster.itch.io/grannys-day-off" target="_blank" class="image fit"><img
-							src="images/Grannys.png" 
-							onmouseover="this.src='images/gd.gif'"
-							onmouseout="this.src='images/Grannys.png'"
-							alt="Granny's Day off Main Cover Art" 
-							width="200"
-							height="300" /></a> -->
 					<div class="slideshow-container" id="five">
-						<!-- Full-width images with number and caption text -->
 							<div class="mySlides fade">
 								<iframe class="video"
 									allowfullscreen="allowfullscreen" 
@@ -723,11 +796,9 @@
 									<img src="images/GrannysDayOff/gd3.png" style="width:100%">
 								</a>
 							</div>
-						<!-- Next and previous buttons -->
 						<a class="prev" onclick="plusSlides(-1, 'five', 'fiveSliderIndex')">&#10094;</a>
 							<a class="next" onclick="plusSlides(1, 'five', 'fiveSliderIndex')">&#10095;</a>
 							<br />
-							<!-- The dots/circles -->
 						<div style="text-align:center">
 							<span class="dot" onclick="currentSlide(1, 'five', 'fiveSliderIndex')"></span>
 							<span class="dot" onclick="currentSlide(2, 'five', 'fiveSliderIndex')"></span>
@@ -769,17 +840,12 @@
 						<li><b>Software Used:</b> Unity, C#, GitHub, Jira</li>
 						<li><b>Team Size:</b> 1</li>
 					</header>
-					<!-- <a href="https://floumi.itch.io/plus-minus-hazards" target="_blank" class="image fit"><img
-							src="images/494p2.png" alt="EECS 494 p2 main menu" width="200"
-							height="300" /></a> -->
 					<div class="slideshow-container" id="six">
-						<!-- Full-width images with number and caption text -->
 							<div class="mySlides fade">
 								<a href="https://floumi.itch.io/plus-minus-hazards" target="_blank">
 									<img src="images/494p2.png" style="width:100%">
 								</a>
 							</div>
-							<!-- The dots/circles -->
 						<div style="text-align:center">
 							<span class="dot" onclick="currentSlide(1, 'six', 'sixSliderIndex')"></span>
 						</div>	
@@ -788,10 +854,6 @@
 						<p>
 							<b>+/- Hazards is 2D -platformer puzzle game where you need to
 							rotate around your paddle around to protect yourself from incoming hazards.</b>
-						
-							<!-- <b>What I worked on:</b> Gameplay Programming, Level and World Design, UI System Design and Implementations,
-							Audio Implementations, Game System Architecture Implementations, QA -->
-
 							<ul>
 								<b>Contributions:</b>
 								<li>Imported the game audio including sound effects and music.</li>
@@ -816,11 +878,7 @@
 						<li><b>Software Used:</b> Unity, C#, GitHub, Jira</li>
 						<li><b>Team Size:</b> 2</li>
 					</header>
-					<!-- <a href="https://floumi.itch.io/p1-nes-zelda" target="_blank" class="image fit"><img
-							src="images/P1Zelda_SC.png" alt="Legend of Zelda main illustration" width="200"
-							height="300" /></a> -->
 					<div class="slideshow-container" id="seven">
-						<!-- Full-width images with number and caption text -->
 							<div class="mySlides fade">
 								<a href="https://floumi.itch.io/p1-nes-zelda" target="_blank">
 									<img src="images/P1Zelda_SC.png" style="width: 100%; height: 300px;">
@@ -834,10 +892,6 @@
 						<p>
 							<b>The Legend of Zelda (NES Game Unity Remake) is a Unity recreation
 							version of the first dungeon, The Eagle from The Legend of Zelda (1986).</b>
-
-							<!-- <b>What I worked on:</b> Gameplay Programming, UI System Design and Implementations,
-							Audio Implementations, Game System Architecture Implementations, QA -->
-
 							<ul>
 								<b>Contributions:</b>
 								<li>Responsible for implementing the player movement and all the weapons.</li>
@@ -852,8 +906,6 @@
 							</li>
 						</ul>
 					</div>
-				</article>
-				<!-- <article>
 				</article> -->
 			</section>
 

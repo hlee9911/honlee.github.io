@@ -4,28 +4,28 @@ var indexes = {
     secondSliderIndex: 1,
     thirdSliderIndex: 1,
     fourthSliderIndex: 1,
-    fiveSliderIndex: 1,
-    sixSliderIndex: 1,
-    sevenSliderIndex: 1,
-    // eightSliderIndex: 1,
+    fifthSliderIndex: 1,
+    sixthSliderIndex: 1,
+    seventhSliderIndex: 1,
+    eighthSliderIndex: 1,
     // nineSliderIndex: 1,
-    tenSliderIndex: 1,
-    elevenSliderIndex: 1,
-    tweleveSliderIndex: 1,
+    // tenSliderIndex: 1,
+    // elevenSliderIndex: 1,
+    // tweleveSliderIndex: 1,
 };
 
 showSlides(indexes.firstSliderIndex, 'first', 'firstSliderIndex');
 showSlides(indexes.secondSliderIndex, 'second', 'secondSliderIndex');
 showSlides(indexes.thirdSliderIndex, 'third', 'thirdSliderIndex');
 showSlides(indexes.fourthSliderIndex, 'fourth', 'fourthSliderIndex');
-showSlides(indexes.fiveSliderIndex, 'five', 'fiveSliderIndex');
-showSlides(indexes.sixSliderIndex, 'six', 'sixSliderIndex');
-showSlides(indexes.sevenSliderIndex, 'seven', 'sevenSliderIndex');
-// showSlides(indexes.eightSliderIndex, 'eight', 'eightSliderIndex');
+showSlides(indexes.fifthSliderIndex, 'fifth', 'fifthSliderIndex');
+showSlides(indexes.sixthSliderIndex, 'sixth', 'sixthSliderIndex');
+showSlides(indexes.seventhSliderIndex, 'seventh', 'seventhSliderIndex');
+showSlides(indexes.eighthSliderIndex, 'eighth', 'eighthSliderIndex');
 // showSlides(indexes.nineSliderIndex, 'nine', 'nineSliderIndex');
-showSlides(indexes.tenSliderIndex, 'ten', 'tenSliderIndex');
-showSlides(indexes.elevenSliderIndex, 'eleven', 'elevenSliderIndex');
-showSlides(indexes.tweleveSliderIndex, 'twelve', 'tweleveSliderIndex');
+// showSlides(indexes.tenSliderIndex, 'ten', 'tenSliderIndex');
+// showSlides(indexes.elevenSliderIndex, 'eleven', 'elevenSliderIndex');
+// showSlides(indexes.tweleveSliderIndex, 'twelve', 'tweleveSliderIndex');
 
 // Next/previous controls
 function plusSlides(n, id, index) { // n - number of slide, id - container id, index - current slide number in slider
