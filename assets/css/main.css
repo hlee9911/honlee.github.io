@@ -4976,3 +4976,21 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 	width: 100%;
 	height: 400px;
 }
+
+/* Meta list styling */
+
+ul.meta {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.meta li {
+  margin: 0.25rem 0;    /* adjust vertical spacing */
+  padding: 0;
+  font-size: 0.95rem;   /* optional size tweak */
+}
+
+ul.meta li b {
+  font-weight: 700;     /* keep label bold if desired */
+}
